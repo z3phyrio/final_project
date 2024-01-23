@@ -1,0 +1,154 @@
+{
+  "locations":
+  {
+    "start":
+    {
+      "description": "Добро пожаловать в игру! В этой игре тебе предстоит раскрыть тайны Забытого королевства.Удачи!",
+      "actions": {
+        "Начать игру": "square"
+      }
+    },
+    "square":
+    {
+      "description":"Вы находитесь на площади Туманного Рассвета. Жители шепчутся о пропаших детях.",
+      "actions":{
+        "Поговорить с жителями":"square_talk",
+        "Выбрать тёмный переулок": "dark_alley",
+        "Посетить таверну \"Лунный Свет\"": "moonlight_tavern"
+      },
+      "image": "./Images/square.jpg"
+    },
+    "square_talk":
+    {
+      "description":"Жители рассказывают о странных событиях. Ваш следующий шаг?",
+      "actions":{
+        "Вернуться на площадь":"square",
+        "Исследовать лесную тропинку":"forest_path_win",
+        "Посетить таверну \"Лунный Свет\"":"moonlight_tavern"
+      },
+      "image": "./Images/square.jpg"
+    },
+    "dark_alley":
+    {
+      "description":"Тёмный переулок полон загадок и опасностей",
+      "actions":{
+        "Следовать по тёмному переулку":"dark_alley_loss",
+        "Обойти тёмное место":"forest_path_win"
+      },
+      "image":"./Images/dark_alley.jpg"
+    },
+    "dark_alley_loss":
+    {
+      "description":"Тёмный переулок полон опасностей вы проиграли",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/dark_alley.jpg"
+    },
+    "moonlight_tavern":
+    {
+      "description":"Таверна наполнена запахом приправ и звуками разговоров",
+      "actions":{
+        "Заказать напиток и поговорить с посетителями":"moonlight_tavern_win",
+        "Покинуть таверну":"moonlight_tavern_loss"
+      },
+      "image":"./Images/taverna.jpg"
+    },
+    "moonlight_tavern_win":
+    {
+      "description":"Посетители рассказали вам о эльфийской чаще",
+      "actions":{
+        "Отправиться к эльфам":"elfish_bowl"
+      },
+      "image":"./Images/taverna.jpg"
+    },
+    "moonlight_tavern_loss": 
+    {
+      "description":"Вы не остались в таверне.Проигрыш.",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/taverna.jpg"
+    },
+    "forest_path_win":
+    {
+      "description":"Лесная тропинка ведёт вас в безопасное место",
+      "actions":{
+        "Продолжить": "elfish_bowl"
+      },
+      "image":"./Images/forrest.jpg"
+    },
+    "elfish_bowl": 
+    { 
+      "description": "Эльфийская чаша света приносит вам удачу.", 
+      "actions": { 
+       "Поговорить с эльфами": "underground", 
+       "Попытаться украсть что-то у эльфов": "elfish_bowl_loss" 
+      },  
+      "image": "./Images/elf.jpg" 
+    }, 
+    "elfish_bowl_loss":
+    {
+      "description":"Попытка украсть что-то у эльфов привела к поражению",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/elf_loss.jpg"
+    },
+    "underground":
+    {
+      "description":"Эльфы привели вас в их подземелья",
+      "actions":{
+        "Исследовать подземелья":"underground_win",
+        "Идти к Забытому королевству":"last_battle"
+      },
+      "image":"./Images/undeground.jpg"
+    },
+    "underground_win":
+    {
+      "description":"Исследование подземелий приводит вас к победе",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/undeground_win.jpg"
+    },
+    "last_battle":
+    {
+      "description":"Вы добрались к Забытому королевству и вступаете в последнюю битву",
+      "actions":{
+        "Вступить в бой с Тьмой":"victory",
+        "Попытаться уговорить ТЬму":"last_battle_loss"
+      },
+      "image":"./Images/last_battle.jpg"
+    },
+    "victory":
+    {
+      "description":"Ваша смелость и упорство привели вас к победе. Игра завершена.",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/victory.jpg"
+    },
+    "last_battle_loss":
+    {
+      "description":"Тьма поглотила вас. Ваше приключение завершилось неудачей.",
+      "actions":{
+        "Начать заново":"square",
+        "Выйти из игры":"end"
+      },
+      "image":"./Images/last_battle_loss.jpg"
+    },
+    "end":
+    {
+      "description":"Конец приключения",
+      "actions":{
+        "Начать заново":"square"
+      }
+    }
+  }
+}
